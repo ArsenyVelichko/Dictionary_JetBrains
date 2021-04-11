@@ -21,7 +21,6 @@ public:
     int size() const;
 
 private:
-    Dictionary(QFile* sourceFile, QObject* parent = nullptr);
 
     Range defineSearchRange(const Range& range) const;
     Range defineWordRange(int pos) const;
