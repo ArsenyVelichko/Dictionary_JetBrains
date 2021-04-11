@@ -1,5 +1,5 @@
-#ifndef MATCHFINDER_H
-#define MATCHFINDER_H
+#ifndef DICTIONARY_H
+#define DICTIONARY_H
 
 #include <QFile>
 #include <QObject>
@@ -30,4 +30,4 @@ private:
     QFile* mSourceFile = nullptr;
 };
 
-#endif // MATCHFINDER_H
+#endif // DICTIONARY_H

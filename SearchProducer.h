@@ -1,5 +1,5 @@
-#ifndef SEARCHWORKER_H
-#define SEARCHWORKER_H
+#ifndef SEARCHPRODUCER_H
+#define SEARCHPRODUCER_H
 
 #include <QMutex>
 #include <QThread>
@@ -34,4 +34,4 @@ private:
     QWaitCondition mReceivedCondition;
     QMutex mLock;
 };
-#endif // SEARCHWORKER_H
+#endif // SEARCHPRODUCER_H
