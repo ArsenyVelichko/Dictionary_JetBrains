@@ -20,7 +20,6 @@ public:
     void run() override;
 
     QString getChunk();
-    void cancel();
 
 signals:
     void chunkReady();

@@ -15,7 +15,7 @@ MainWindow::MainWindow(QWidget* parent)
 
 MainWindow::~MainWindow() {
     if (mProducer) {
-        mProducer->cancel();
+        mProducer->requestInterruption();
         mProducer->wait();
     }
 
@@ -50,7 +50,7 @@ void MainWindow::onQueryChanged(const QString& query)
     if (!mProducer->isRunning()) {
         onSearchFinished();
     } else {
-        mProducer->cancel();
+        mProducer->requestInterruption();
     }
 }
 

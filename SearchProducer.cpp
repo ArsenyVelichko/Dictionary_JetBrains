@@ -25,9 +25,9 @@ void SearchProducer::run()
         if (resultStr.isEmpty()) { continue; }
 
         mPreparedChunk = resultStr;
-        emit chunkReady();
 
         mLock.lock();
+        emit chunkReady();
         mReceivedCondition.wait(&mLock);
         mLock.unlock();
 
@@ -42,12 +42,4 @@ QString SearchProducer::getChunk()
     mReceivedCondition.wakeOne();
     mLock.unlock();
     return chunk;
-}
-
-void SearchProducer::cancel()
-{
-    QMutexLocker locker(&mLock);
-
-    requestInterruption();
-    mReceivedCondition.wakeOne();
 }
